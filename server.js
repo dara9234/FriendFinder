@@ -22,10 +22,15 @@ var PORT = process.env.PORT || 8080;
 
 
 // parse application/x-www-form-urlencoded
-app.use(bodyParser.urlencoded({ extended: false }))
+app.use(bodyParser.urlencoded({ extended: true }))
  
-// parse application/json
-app.use(bodyParser.json())
+// parse various different custom JSON types as JSON application/json
+app.use(bodyParser.json({type: 'application/*+jason'}))
+
+// parse some custom thing into a Buffer
+app.use(bodyParser.raw({type:'application/vnd.custom-type'}))
+
+app.use(bodyParser.text({type:'text/html'}))
 // Sets up the Express app to handle data parsing
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
@@ -36,8 +41,8 @@ app.use(express.json());
 // These routes give our server a "map" of how to respond when users visit or request data from various URLs.
 // ================================================================================
 
-//require("./routes/apiRoutes")(app);
-//require("./routes/htmlRoutes")(app);
+require("./app/routing/apiRoutes.js")(app);
+require("./app/routing/htmlRoutes.js")(app);
 
 // =============================================================================
 // LISTENER
