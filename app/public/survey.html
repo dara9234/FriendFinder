@@ -168,7 +168,7 @@
 
   <!-- Modal -->
   <div id="results-modal" class="modal fade" role="dialog">
-    <div class="modal-dialog">
+    <div class="modal-dialog modal-md">>
 
       <!-- Modal content-->
       <div class="modal-content">
@@ -252,10 +252,10 @@
           ]
         };
 // grab the URL of the website
-         var currentURL =window.location.origin;
+         //var currentURL =window.location.origin;
 
         // AJAX post the data to the friends API.
-        $.post(currentURL +"/api/friends", userData, function(data) {
+        $.post("/api/friends", userData, function(data) {
 
           // Grab the result from the AJAX post so that the best match's name and photo are displayed.
           $("#match-name").text(data.name);

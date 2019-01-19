@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/dara9234/FriendFinder#readme",
   "dependencies": {
+    "array-sort": "^1.0.0",
     "body": "^5.1.0",
     "express": "^4.16.4",
     "parser": "^0.1.4"
