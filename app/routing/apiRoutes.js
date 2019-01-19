@@ -52,19 +52,19 @@ module.exports = function (app) {
     // we take the result of the user's servey POST and parse it here
     var userData = req.body;
     var userScores = userData.scores;
-    console.log(userScores)
+    console.log(userScores);
 
     // ceating a variable that will calculate the difference betwwen the user's scores and the 
     // scores of each user in the array
     var totalDifference = 0;
 
     // looping through all the friends possiblilites in the arra(database)
-    for (var i = 0; i <= friends.length; i++) {
+    for (var i = 0; i < friends.length; i++) {
       console.log(friends[i]);
       totalDifference = 0;
 
       // we now need to loop through all the scores of each firend
-      for (var j = 0; j <= friends[i].scores[j]; j++); {
+      for (var j = 0; j < friends[i].scores[j]; j++); {
 
         // calculating the difference between the scores and adding them into the totalDifference
         // // Math.abs will get rid of negative integers

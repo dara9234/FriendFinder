@@ -32,8 +32,8 @@ app.use(bodyParser.raw({type:'application/vnd.custom-type'}))
 
 app.use(bodyParser.text({type:'text/html'}))
 // Sets up the Express app to handle data parsing
-app.use(express.urlencoded({ extended: true }));
-app.use(express.json());
+//app.use(express.urlencoded({ extended: true }));
+//app.use(express.json());
 
 // ================================================================================
 // ROUTER
